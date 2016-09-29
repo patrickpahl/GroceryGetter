@@ -9,12 +9,11 @@
 import Foundation
 import CoreData
 
-
 class Item: NSManagedObject {
 
-    convenience init?(name: String, category: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext){
+    convenience init(name: String, category: String, context: NSManagedObjectContext = Stack.sharedStack.managedObjectContext){
         
-        guard let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: context) else {return nil}
+         let entity = NSEntityDescription.entityForName("Item", inManagedObjectContext: context)!
         
         self.init(entity: entity, insertIntoManagedObjectContext: context)
         
@@ -25,7 +24,6 @@ class Item: NSManagedObject {
         self.got = false
     }
 }
-
 
 
 //class Item: NSManagedObject {

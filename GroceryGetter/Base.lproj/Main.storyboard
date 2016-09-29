@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FgX-ry-7U7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FgX-ry-7U7">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--GroceryGetter-->
@@ -18,26 +20,48 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mLo-dX-mun" id="rLO-zh-odq">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u34-Xj-Kn7">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u34-Xj-Kn7">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="u34-Xj-Kn7" secondAttribute="height" multiplier="1:1" id="d1w-bV-0CL"/>
+                                                <constraint firstAttribute="height" constant="60" id="upC-WH-y7O"/>
+                                            </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-by-mzY">
-                                            <rect key="frame" x="529" y="0.0" width="50" height="50"/>
-                                            <state key="normal" title="Button" image="notpicked"/>
-                                            <connections>
-                                                <action selector="pickedButtonTapped:" destination="mLo-dX-mun" eventType="touchUpInside" id="SXI-Qq-Wx1"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-kP-X8S">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w7y-kP-X8S">
                                             <rect key="frame" x="73" y="8" width="334" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="nbf-R6-ZGg"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFb-by-mzY">
+                                            <rect key="frame" x="529" y="2" width="55" height="55"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="55" id="7q5-nM-yJF"/>
+                                                <constraint firstAttribute="width" secondItem="KFb-by-mzY" secondAttribute="height" multiplier="1:1" id="dR2-Ui-ov4"/>
+                                            </constraints>
+                                            <state key="normal" title="Button" image="notPicked"/>
+                                            <connections>
+                                                <action selector="pickedButtonTapped:" destination="mLo-dX-mun" eventType="touchUpInside" id="SXI-Qq-Wx1"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="u34-Xj-Kn7" firstAttribute="leading" secondItem="rLO-zh-odq" secondAttribute="leadingMargin" constant="-8" id="CMK-UE-Yg6"/>
+                                        <constraint firstItem="KFb-by-mzY" firstAttribute="top" secondItem="rLO-zh-odq" secondAttribute="topMargin" constant="-6" id="Ck9-W3-T0D"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="KFb-by-mzY" secondAttribute="trailing" constant="8" id="E5k-Xu-pys"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="w7y-kP-X8S" secondAttribute="bottom" constant="-0.5" id="JGo-ls-gP0"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KFb-by-mzY" secondAttribute="bottom" constant="-5.5" id="OHj-MO-2PT"/>
+                                        <constraint firstItem="w7y-kP-X8S" firstAttribute="top" secondItem="rLO-zh-odq" secondAttribute="topMargin" id="X6P-p0-5Gh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="u34-Xj-Kn7" secondAttribute="bottom" constant="-8.5" id="ZFU-Ld-Kt1"/>
+                                        <constraint firstItem="w7y-kP-X8S" firstAttribute="leading" secondItem="u34-Xj-Kn7" secondAttribute="trailing" constant="13" id="r9V-Da-psX"/>
+                                        <constraint firstItem="u34-Xj-Kn7" firstAttribute="top" secondItem="rLO-zh-odq" secondAttribute="topMargin" constant="-8" id="t8a-mD-iJq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="groceryImage" destination="u34-Xj-Kn7" id="HkF-H4-GgV"/>
@@ -71,17 +95,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZnQ-cm-kvK">
-                            <size key="itemSize" width="100" height="100"/>
+                            <size key="itemSize" width="110" height="110"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myItemCell" id="YrW-hp-E0O">
-                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="64" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -118,6 +142,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="notpicked" width="200" height="200"/>
+        <image name="notPicked" width="200" height="200"/>
     </resources>
 </document>

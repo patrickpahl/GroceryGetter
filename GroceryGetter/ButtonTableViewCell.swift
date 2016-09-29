@@ -4,28 +4,31 @@
 //
 //  Created by Patrick Pahl on 8/29/16.
 //  Copyright © 2016 Patrick Pahl. All rights reserved.
-//
 
 import UIKit
 
 class ButtonTableViewCell: UITableViewCell {
 
+    var item: Item? {
+        didSet {
+            itemNameLabel.text = item?.name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    var delegate: ButtonTableViewCellDelegate
+    var delegate: ButtonTableViewCellDelegate?
     
     //MARK: - Outlets
     @IBOutlet weak var groceryImage: UIImageView!
     @IBOutlet weak var itemNameLabel: UILabel!
     @IBOutlet weak var pickedButton: UIButton!
-    
     
     //MARK: - Action
     @IBAction func pickedButtonTapped(sender: AnyObject) {
@@ -39,19 +42,18 @@ class ButtonTableViewCell: UITableViewCell {
         if picked {
             pickedButton.setImage(UIImage(named: "picked"), forState: .Normal)
         } else {
-            pickedButton.setImage(UIImage(named: "notpicked"), forState: .Normal)
+            pickedButton.setImage(UIImage(named: "notPicked"), forState: .Normal)
         }
     }
     
-    
     func updateWithItem(item: Item){
-        
-        itemNameLabel.text = item.name
+        self.item = item
         updateButton(item.picked.boolValue)
     }
-
 }
 
 protocol ButtonTableViewCellDelegate {
     func buttonCellButtonTapped(sender: ButtonTableViewCell)
 }
+
+
