@@ -19,6 +19,8 @@
 		79B5BEC91D709E830053170C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5BEC81D709E830053170C /* Stack.swift */; };
 		79BA207F1D74CF0B004DB33A /* ItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA207E1D74CF0B004DB33A /* ItemCollectionViewController.swift */; };
 		79BA20811D74EF56004DB33A /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79BA20801D74EF56004DB33A /* ButtonTableViewCell.swift */; };
+		79E370171D9DAF5400F56993 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E370161D9DAF5400F56993 /* ImageCollectionViewCell.swift */; };
+		79E370191D9DB22000F56993 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E370181D9DB22000F56993 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		79B5BEC81D709E830053170C /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		79BA207E1D74CF0B004DB33A /* ItemCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCollectionViewController.swift; sourceTree = "<group>"; };
 		79BA20801D74EF56004DB33A /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		79E370161D9DAF5400F56993 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		79E370181D9DB22000F56993 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +72,17 @@
 		79B5BEA81D7095E10053170C /* GroceryGetter */ = {
 			isa = PBXGroup;
 			children = (
+				79B5BEAD1D7095E10053170C /* Main.storyboard */,
 				79B5BEC11D709D3C0053170C /* Model.xcdatamodeld */,
 				79B5BEC41D709E1B0053170C /* Item+CoreDataProperties.swift */,
 				79B5BEC51D709E1B0053170C /* Item.swift */,
 				79B5BEBD1D709A300053170C /* ItemController.swift */,
+				79E370181D9DB22000F56993 /* IntroViewController.swift */,
 				79B5BEBF1D709A6D0053170C /* ItemTableViewController.swift */,
 				79BA20801D74EF56004DB33A /* ButtonTableViewCell.swift */,
 				79BA207E1D74CF0B004DB33A /* ItemCollectionViewController.swift */,
+				79E370161D9DAF5400F56993 /* ImageCollectionViewCell.swift */,
 				79B5BEB01D7095E10053170C /* Assets.xcassets */,
-				79B5BEAD1D7095E10053170C /* Main.storyboard */,
 				79B5BEA91D7095E10053170C /* AppDelegate.swift */,
 				79B5BEC81D709E830053170C /* Stack.swift */,
 				79B5BEB21D7095E10053170C /* LaunchScreen.storyboard */,
@@ -162,7 +168,9 @@
 				79B5BEC31D709D3C0053170C /* Model.xcdatamodeld in Sources */,
 				79B5BEC91D709E830053170C /* Stack.swift in Sources */,
 				79B5BEC71D709E1B0053170C /* Item.swift in Sources */,
+				79E370171D9DAF5400F56993 /* ImageCollectionViewCell.swift in Sources */,
 				79BA207F1D74CF0B004DB33A /* ItemCollectionViewController.swift in Sources */,
+				79E370191D9DB22000F56993 /* IntroViewController.swift in Sources */,
 				79B5BEC01D709A6D0053170C /* ItemTableViewController.swift in Sources */,
 				79B5BEAA1D7095E10053170C /* AppDelegate.swift in Sources */,
 			);
