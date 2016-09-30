@@ -76,7 +76,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="GroceryGetter" id="4BS-jF-Rzu">
+                        <barButtonItem key="leftBarButtonItem" title="Home" id="xZR-UP-8GO">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="A9G-K8-bqR" kind="show" id="PYc-Dt-NZM"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Next" style="plain" id="mAY-GB-8lI">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="4v1-4d-Hxt" kind="show" id="GFG-a1-9vo"/>
                             </connections>
@@ -94,21 +101,40 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yyn-AP-0KS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZnQ-cm-kvK">
-                            <size key="itemSize" width="110" height="110"/>
+                        <color key="backgroundColor" red="0.34968053634639379" green="0.80865384615384617" blue="0.62745934943912607" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="1" id="ZnQ-cm-kvK">
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="YrW-hp-E0O" customClass="ImageCollectionViewCell" customModule="GroceryGetter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="110" height="110"/>
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Ve-kt-NZu">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="eai-N9-Ldt"/>
+                                                <constraint firstAttribute="height" constant="100" id="nq7-bD-oTG"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="5Ve-kt-NZu" secondAttribute="trailing" id="D9a-4I-qpw"/>
+                                    <constraint firstAttribute="bottom" secondItem="5Ve-kt-NZu" secondAttribute="bottom" id="EGD-xQ-a6r"/>
+                                    <constraint firstItem="5Ve-kt-NZu" firstAttribute="leading" secondItem="YrW-hp-E0O" secondAttribute="leading" id="WTY-hq-Wrr"/>
+                                    <constraint firstItem="5Ve-kt-NZu" firstAttribute="top" secondItem="YrW-hp-E0O" secondAttribute="top" id="uJN-6j-tLt"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="collectionImageView" destination="5Ve-kt-NZu" id="Mgu-UP-hKv"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -133,59 +159,101 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GroceryGetter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baw-Pf-aGg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GroceryGetter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Baw-Pf-aGg">
                                 <rect key="frame" x="190" y="28" width="220" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="5Ud-it-DZs"/>
+                                    <constraint firstAttribute="width" constant="220" id="nZj-n6-bkd"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dmR-dS-QiK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aaCart" translatesAutoresizingMaskIntoConstraints="NO" id="dmR-dS-QiK">
                                 <rect key="frame" x="225" y="95" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="3df-vd-j9W"/>
+                                    <constraint firstAttribute="width" constant="150" id="V2E-us-czf"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick your groceries from the list." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-9P-Ez4">
-                                <rect key="frame" x="130" y="294" width="340" height="45"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick your groceries from the list." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KB-9P-Ez4">
+                                <rect key="frame" x="130" y="297" width="340" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="4kE-N6-OYV"/>
+                                    <constraint firstAttribute="height" constant="45" id="adO-jz-5Uy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WFe-LI-Cot">
-                                <rect key="frame" x="184" y="434" width="220" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 1: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-GE-CY5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 1: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRH-GE-CY5">
                                 <rect key="frame" x="254" y="260" width="92" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="92" id="2RR-nR-ZjB"/>
+                                    <constraint firstAttribute="height" constant="35" id="Wl0-Sb-JsM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Step 2: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-c4-uaa">
-                                <rect key="frame" x="254" y="336" width="92" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step 2: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYP-c4-uaa">
+                                <rect key="frame" x="254" y="350" width="92" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="92" id="S9W-KB-MoX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="TpK-I8-paI"/>
+                                    <constraint firstAttribute="width" constant="92" id="ZYZ-3m-QAA"/>
+                                    <constraint firstAttribute="height" constant="35" id="pFO-8z-lke"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-dY-kpK">
-                                <rect key="frame" x="130" y="378" width="340" height="48"/>
-                                <string key="text">Click off on your groceries
- as you pick them from the list.</string>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-DF-gJF">
-                                <rect key="frame" x="248" y="451" width="93" height="54"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk4-DF-gJF">
+                                <rect key="frame" x="253.5" y="470" width="93" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="aUc-dx-PJX"/>
+                                    <constraint firstAttribute="height" constant="54" id="kxN-Y5-qEC"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <state key="normal" title="START">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.39007414870000001" green="0.81859611740000005" blue="0.7048072366" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="FgX-ry-7U7" kind="show" id="N2u-Td-ghu"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojf-dY-kpK">
+                                <rect key="frame" x="130" y="393" width="340" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="MZy-DJ-Frp"/>
+                                    <constraint firstAttribute="width" constant="340" id="fl2-Xe-hNl"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="340" id="n17-UF-lDV"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="tjc-wx-S9M"/>
+                                </constraints>
+                                <string key="text">Click off on your groceries
+ as you pick them from the list.</string>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.39007414870000001" green="0.81859611740000005" blue="0.7048072366" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dmR-dS-QiK" firstAttribute="top" secondItem="Baw-Pf-aGg" secondAttribute="bottom" constant="8" id="0aJ-5i-TE8"/>
+                            <constraint firstItem="KRH-GE-CY5" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="1B0-PS-lPY"/>
+                            <constraint firstItem="Ojf-dY-kpK" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="3ig-G8-SUL"/>
+                            <constraint firstItem="KRH-GE-CY5" firstAttribute="top" secondItem="dmR-dS-QiK" secondAttribute="bottom" constant="15" id="6h8-Yd-7ke"/>
+                            <constraint firstItem="Ojf-dY-kpK" firstAttribute="top" secondItem="oYP-c4-uaa" secondAttribute="bottom" constant="8" id="DGT-oi-BJQ"/>
+                            <constraint firstItem="7KB-9P-Ez4" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="E1x-cf-Wye"/>
+                            <constraint firstItem="7KB-9P-Ez4" firstAttribute="top" secondItem="KRH-GE-CY5" secondAttribute="bottom" constant="2" id="FOE-F7-o3y"/>
+                            <constraint firstItem="Baw-Pf-aGg" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="IKM-qt-gNm"/>
+                            <constraint firstItem="oYP-c4-uaa" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="U9p-Ei-e6A"/>
+                            <constraint firstItem="dmR-dS-QiK" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="bTo-Vy-gyW"/>
+                            <constraint firstItem="oYP-c4-uaa" firstAttribute="top" secondItem="7KB-9P-Ez4" secondAttribute="bottom" constant="8" id="fLD-YQ-90t"/>
+                            <constraint firstItem="Kk4-DF-gJF" firstAttribute="top" secondItem="Ojf-dY-kpK" secondAttribute="bottom" constant="29" id="leb-BI-v0F"/>
+                            <constraint firstItem="Kk4-DF-gJF" firstAttribute="centerX" secondItem="gUe-TO-YY7" secondAttribute="centerX" id="qPK-DT-TtC"/>
+                            <constraint firstItem="Baw-Pf-aGg" firstAttribute="top" secondItem="jiK-go-OoD" secondAttribute="bottom" constant="8" id="qfj-SR-pKk"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="appImage" destination="dmR-dS-QiK" id="hAY-s5-cNI"/>
@@ -217,6 +285,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="aaCart" width="298" height="296"/>
         <image name="notPicked" width="200" height="200"/>
     </resources>
 </document>

@@ -13,16 +13,16 @@ class IntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        startButton.layer.borderWidth = 2.0
+        startButton.layer.borderColor = UIColor.whiteColor().CGColor
+        startButton.layer.cornerRadius = 8.0
+        startButton.layer.backgroundColor = UIColor.whiteColor().CGColor
       
+        self.navigationController?.navigationBarHidden = true
     }
-
-    
     
     @IBOutlet weak var appImage: UIImageView!
-    
-    
     @IBOutlet weak var startButton: UIButton!
-    
 
     /*
     // MARK: - Navigation

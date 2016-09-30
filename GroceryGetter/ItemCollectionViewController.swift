@@ -16,7 +16,6 @@ class ItemCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
 
         self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
     }
 
     /*
@@ -32,7 +31,6 @@ class ItemCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
@@ -43,9 +41,21 @@ class ItemCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
     
+        
     
         return cell
     }
+    
+///
+//    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
+//    //nil colesent: if you can't get an imageCollectionViewCell, create one
+//    
+//    let image = UIImage(named: picturesArray[indexPath.item])
+//    //number of items in section is what we're working with, not rows
+//    cell.updateWith(image ?? UIImage())
+//    
+//    return cell
+///
 
     // MARK: UICollectionViewDelegate
 
