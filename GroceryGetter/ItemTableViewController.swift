@@ -4,7 +4,6 @@
 //
 //  Created by Patrick Pahl on 8/26/16.
 //  Copyright © 2016 Patrick Pahl. All rights reserved.
-//
 
 import UIKit
 import CoreData

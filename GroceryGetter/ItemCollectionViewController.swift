@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import CoreData
 
 private let reuseIdentifier = "imageCell"
 
-class ItemCollectionViewController: UICollectionViewController {
+class ItemCollectionViewController: UICollectionViewController, ImageCollectionViewCellDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +40,25 @@ class ItemCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
         
-    
+        let item = ItemController.sharedController.pickedItems[indexPath.item]
+        
+        cell.updateWithCollectionItem(item)
+        cell.delegate = self
         return cell
     }
     
-///
-//    let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as? ImageCollectionViewCell ?? ImageCollectionViewCell()
-//    //nil colesent: if you can't get an imageCollectionViewCell, create one
-//    
-//    let image = UIImage(named: picturesArray[indexPath.item])
-//    //number of items in section is what we're working with, not rows
-//    cell.updateWith(image ?? UIImage())
-//    
-//    return cell
-///
-
+    //MARK: - ImageCollectionViewCellDelegate
+    
+    func buttonCollectionButtonTapped(sender: ImageCollectionViewCell) {
+        let item: Item
+        guard let indexPath = collectionView?.cellForItemAtIndexPath(sender) else {return}
+        ItemController.sharedController.gotValueToggle(item)
+        self.collectionView?.reloadData()
+    }
+    
+    
     // MARK: UICollectionViewDelegate
 
     /*
@@ -89,3 +91,7 @@ class ItemCollectionViewController: UICollectionViewController {
     */
 
 }
+
+
+
+

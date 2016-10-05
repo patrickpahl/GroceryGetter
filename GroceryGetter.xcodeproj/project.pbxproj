@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7903E1D31DA468D000C3C652 /* ScratchPad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7903E1D21DA468D000C3C652 /* ScratchPad.swift */; };
 		79B5BEAA1D7095E10053170C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B5BEA91D7095E10053170C /* AppDelegate.swift */; };
 		79B5BEAF1D7095E10053170C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79B5BEAD1D7095E10053170C /* Main.storyboard */; };
 		79B5BEB11D7095E10053170C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79B5BEB01D7095E10053170C /* Assets.xcassets */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7903E1D21DA468D000C3C652 /* ScratchPad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScratchPad.swift; sourceTree = "<group>"; };
 		79B5BEA61D7095E10053170C /* GroceryGetter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryGetter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79B5BEA91D7095E10053170C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79B5BEAE1D7095E10053170C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				79B5BEC81D709E830053170C /* Stack.swift */,
 				79B5BEB21D7095E10053170C /* LaunchScreen.storyboard */,
 				79B5BEB51D7095E10053170C /* Info.plist */,
+				7903E1D21DA468D000C3C652 /* ScratchPad.swift */,
 			);
 			path = GroceryGetter;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 				79B5BEC71D709E1B0053170C /* Item.swift in Sources */,
 				79E370171D9DAF5400F56993 /* ImageCollectionViewCell.swift in Sources */,
 				79BA207F1D74CF0B004DB33A /* ItemCollectionViewController.swift in Sources */,
+				7903E1D31DA468D000C3C652 /* ScratchPad.swift in Sources */,
 				79E370191D9DB22000F56993 /* IntroViewController.swift in Sources */,
 				79B5BEC01D709A6D0053170C /* ItemTableViewController.swift in Sources */,
 				79B5BEAA1D7095E10053170C /* AppDelegate.swift in Sources */,
