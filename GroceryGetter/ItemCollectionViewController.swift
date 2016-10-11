@@ -9,14 +9,19 @@
 import UIKit
 import CoreData
 
+///TO DO: CLEAR ALL BUTTON- all items go to 'not got'
+
 private let reuseIdentifier = "imageCell"
 
-class ItemCollectionViewController: UICollectionViewController, ImageCollectionViewCellDelegate {
+class ItemCollectionViewController: UICollectionViewController, ImageCollectionViewCellDelegate, UICollectionViewDelegateFlowLayout {
 
+    ///*Added: UICollectionViewDelegateFlowLayout
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        /// FIXED: Bug caused when casting cell as ImageCollectionViewCell bc we're using a custom cell. Just need to delete the code.
+        //  super.viewDidLoad()
+        //  self.collectionView!.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     }
 
     /*
@@ -49,15 +54,28 @@ class ItemCollectionViewController: UICollectionViewController, ImageCollectionV
         return cell
     }
     
+    //Size for item at indexPath
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        //let screenHeight = screenSize.height
+        return CGSize(width: screenWidth/3, height: screenWidth/3)
+    }
+    
     //MARK: - ImageCollectionViewCellDelegate
     
     func buttonCollectionButtonTapped(sender: ImageCollectionViewCell) {
-        let item: Item
-        guard let indexPath = collectionView?.cellForItemAtIndexPath(sender) else {return}
+        // FIXED
+        //        let item: Item
+        //        guard let indexPath = collectionView?.cellForItemAtIndexPath(sender) else {return}
+        //        ItemController.sharedController.gotValueToggle(item)
+        //        self.collectionView?.reloadData()
+        guard let indexPath = collectionView?.indexPathForCell(sender) else {return}
+        let item = ItemController.sharedController.pickedItems[indexPath.item]
         ItemController.sharedController.gotValueToggle(item)
         self.collectionView?.reloadData()
     }
-    
     
     // MARK: UICollectionViewDelegate
 

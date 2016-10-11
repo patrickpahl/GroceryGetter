@@ -24,7 +24,10 @@ class ImageCollectionViewCell: UICollectionViewCell {
     
     var item: Item? {
         didSet {
-            collectionImageView.image = UIImage(named: "\(item?.name)")
+            // FIXED: "item?.name" will be Optional("coffee") because it isn't unwrapped
+            //            collectionImageView.image = UIImage(named: "\(item?.name)")
+            collectionImageView.image = UIImage(named: "\(item!.name)")
+            // FIXED: Careful setting up outlets on didSet. There's a chance collectionImageView hasn't loaded yet and therefore it could be nil
         }
     }
     
@@ -48,23 +51,3 @@ protocol ImageCollectionViewCellDelegate {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/////
-//    func updateWithImage(image: UIImage){
-//        let image = UIImage(named: String("\(item.name)"))
-//    }
-
-//    func updateWithItem(item: Item?){
-//
-//        func updateWith(image: UIImage){
-//        collectionImageView.image = image
-//    }
