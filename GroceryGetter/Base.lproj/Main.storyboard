@@ -161,6 +161,9 @@
                     <navigationItem key="navigationItem" id="rjU-bG-XzX">
                         <barButtonItem key="rightBarButtonItem" title="Clear All" id="zUD-wn-nen">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="clearAllButtonTapped:" destination="4v1-4d-Hxt" id="R1o-ZT-HVo"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
